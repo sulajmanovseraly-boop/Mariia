@@ -1,0 +1,172 @@
+/* --- 1. БАЗОВЫЕ СТИЛИ (ОБЩИЕ) --- */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1400px;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- 2. СТИЛИ ПЕРВОЙ СТРАНИЦЫ (index.html) --- */
+.page1-body {
+    background-image: url('romantic-love-heart-pattern-couple-wedding-anniversary-ceremony_1017-52042.avif');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.page1-body h1 {
+    font-style: italic; 
+    color: #5C92CC;
+    font-size: clamp(40px, 8vw, 70px);
+    margin: 30px 0;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 1);
+}
+
+.page1-body h2 {
+    color: rgb(138, 82, 190);
+    font-size: clamp(22px, 4vw, 35px);
+    font-style: italic;
+    margin-top: 40px;
+    background: rgba(255, 255, 255, 0.6);
+    padding: 15px;
+    border-radius: 15px;
+    line-height: 1.4;
+}
+
+.page1-body p {
+    color: #5C92CC;
+    font-size: clamp(28px, 6vw, 50px);
+    font-style: italic;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1);
+}
+
+/* Фото и Видео */
+.photos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.her {
+    width: 30%;
+    max-width: 400px;
+    aspect-ratio: 4 / 7;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    background-color: black;
+}
+
+img.her { object-fit: cover; }
+video.her { object-fit: contain; }
+
+/* Кнопка на 1 странице */
+.page1-body .my-button {
+    background: linear-gradient(45deg, #1d7ac7, #5C92CC);
+    color: white !important;
+    padding: 18px 45px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    display: inline-block;
+    margin-top: 40px;
+    box-shadow: 0 10px 20px rgba(29, 122, 199, 0.3);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* --- 3. НОВЫЙ СТИЛЬ ВТОРОЙ СТРАНИЦЫ (page2.html) - ТЕМНЫЙ И ЧИСТЫЙ --- */
+.page2-body {
+    /* Глубокий темно-синий/серый цвет (очень стильный) */
+    background-color: #1a1e23; 
+    /* Мягкий градиент, чтобы фон не был плоским */
+    background-image: radial-gradient(circle at center, #2c343a 0%, #1a1e23 100%);
+    font-family: "Caveat", cursive;
+}
+
+.page2-body .wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.lastly-title {
+    font-family: "Caveat", cursive;
+    color: #ffffff; /* Чистый белый */
+    font-size: 85px;
+    margin-bottom: 20px;
+    text-shadow: none !important;
+}
+
+.congrats-text {
+    font-family: "Caveat", cursive;
+    font-size: clamp(24px, 5vw, 36px) !important;
+    line-height: 1.6;
+    color: #e0e0e0 !important; /* Светло-серый (не режет глаза) */
+    text-shadow: none !important;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Кнопка на 2 странице - Контрастная */
+.page2-body .my-button {
+    background: #ffffff;
+    color: #1a1e23 !important; /* Текст внутри кнопки темный */
+    padding: 15px 45px;
+    text-decoration: none;
+    border-radius: 50px;
+    display: inline-block;
+    margin-top: 50px;
+    font-family: sans-serif;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.page2-body .my-button:hover {
+    background: #5C92CC;
+    color: white !important;
+}
+
+/* --- 4. ПЛЕЕР И КНОПКА PLAY --- */
+.music-box {
+    margin-bottom: 30px;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 15px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.play-button {
+    padding: 12px 30px;
+    font-size: 18px;
+    background: linear-gradient(135deg, #7794ae, #5C92CC);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* --- 5. АДАПТИВНОСТЬ --- */
+@media (max-width: 900px) {
+    .photos { flex-direction: column; gap: 20px; }
+    .her { width: 90%; max-width: 380px; }
+    .lastly-title { font-size: 65px; }
+}

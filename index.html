@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Туулган күнүң менен, Мария🫶🏻!</title>
+    <link rel="stylesheet" href="website.css">
+    <link rel="shortcut icon" href="download.png">
+</head>
+<body class="page1-body">
+
+    <div class="wrapper">
+        <section class="damn">
+            <h1>Mariiaaaa!</h1>
+        </section>
+
+        <div class="music-box">
+            <p>включи для атмосферы✨</p>
+            <audio id="bgMusic" loop>
+                <source src="Enya - Carribean Blue.mp3" type="audio/mpeg">
+            </audio>
+            <button onclick="toggleMusic()" id="musicBtn" class="play-button">Play 🎵</button>
+        </div>
+
+        <div class="photos">
+            <img src="her.jpg" class="her" alt="Photo 1">
+            
+            <video class="her" controls playsinline>
+                <source src="Mariia's Birthday!!! (1).mp4" type="video/mp4">
+                Ваш браузер не поддерживает видео.
+            </video>
+
+            <img src="her2.jpg" class="her" alt="Photo 2">
+        </div>
+
+        <div class="message">
+            <h2>привет Мария! я не знал как тебя поздравить, поэтому я сделал этот "сайт"😅. этот сайт будет работать всегда!</h2>
+            <p>you are the most gorgeous girl, ever!</p>
+        </div>
+
+        <div class="button-container">
+            <a href="page2.html" class="my-button">✨ Марияяя, нажми сюда! ✨</a>
+        </div>
+    </div>
+
+    <script>
+        var music = document.getElementById("bgMusic");
+        var btn = document.getElementById("musicBtn");
+
+        window.addEventListener('load', function() {
+            if (localStorage.getItem('musicPlaying') === 'true') {
+                music.currentTime = localStorage.getItem('musicTime') || 0;
+                music.play().catch(() => { console.log("Нужен клик"); });
+                updateBtn(true);
+            }
+        });
+
+        function toggleMusic() {
+            if (music.paused) {
+                music.play();
+                localStorage.setItem('musicPlaying', 'true');
+                updateBtn(true);
+            } else {
+                music.pause();
+                localStorage.setItem('musicPlaying', 'false');
+                updateBtn(false);
+            }
+        }
+
+        function updateBtn(playing) {
+            if (playing) {
+                btn.innerHTML = "Pause ⏸";
+                btn.style.background = "linear-gradient(135deg, #5C92CC, #7794ae)";
+            } else {
+                btn.innerHTML = "Play 🎵";
+                btn.style.background = "linear-gradient(135deg, #7794ae, #5C92CC)";
+            }
+        }
+
+        setInterval(function() {
+            if (!music.paused) {
+                localStorage.setItem('musicTime', music.currentTime);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
